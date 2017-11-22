@@ -8,3 +8,10 @@ html {
 body {
   margin: 0;
 }
+
+#defaultCanvas {
+  width: 600px;
+  height: 400px;
+  /*border:1px solid #000000;*/
+  display: none;
+}

@@ -3,26 +3,30 @@ y = 100,
 angle1 = 0.0,
 segLength = 50;
 var gameStarted = false;
+var canvasCreated = false;
+var a = [];
+var canvasDiv = [];
 
 // Wait for the page to load first
 window.onload = function() {
 
   //Get a reference to the link on the page
   // with an id of "mylink"
-  var a = document.getElementById("play-btn");
-
+  a = document.getElementById("play-btn");
+  canvasDiv = document.getElementById("defaultCanvas");
   //Set code to run when the link is clicked
   // by assigning a function to "onclick"
-  a.onclick = function() {
+  a.onclick = startGame;
+}
 
-    var canvas = createCanvas();
-    canvas.parent("defaultCanvas")
-    strokeWeight(20.0);
-    stroke(255, 100);
-
-    gameStarted = true;
-    return false;
-  }
+function setup() {
+  // if(!canvasCreated) {
+  //   canvas = createCanvas(canvasDiv.offsetWidth, canvasDiv.offsetHeight);
+  //   canvas.parent("defaultCanvas");
+  //   strokeWeight(20.0);
+  //   stroke(255, 100);
+  // }
+  // noLoop();
 }
 
 function draw() {
@@ -46,4 +50,32 @@ function segment(x, y, a) {
   rotate(a);
   line(0, 0, segLength, 0);
   pop();
+}
+
+function startGame() {
+    if(!gameStarted) {
+      canvasDiv.style.display = "block";
+      if(!canvasCreated) {
+        canvas = createCanvas(canvasDiv.offsetWidth, canvasDiv.offsetHeight);
+        canvas.parent("defaultCanvas");
+        strokeWeight(20.0);
+        stroke(255, 100);
+      }
+      resizeCanvas(canvasDiv.offsetWidth, canvasDiv.offsetHeight)
+      gameStarted = true;
+      a.text = "Restart Game";
+      a.onclick = resetGame;
+    }
+    return false;
+  }
+
+function resetGame() {
+  // Reset Game Parameters
+
+  // reset the link's callback
+  resizeCanvas(1,1)
+  gameStarted = false;
+  a.onclick = startGame;
+  a.text = "Start Game";
+  return false;
 }
