@@ -1,0 +1,67 @@
+/* Color Scheme
+
+light to dark:
+
+#ECEBE4 - Alabaster
+#DADDD8 - Gainsboro
+#CAC4CE - Lavander Gray
+#2F323A - Gunmetal
+#03191E - Rich Black
+ */
+
+/* Global */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+nav {
+  min-width: 300px;
+  margin: 0;
+  background-color: #CAC4CE;
+  text-align: center;
+}
+nav a {
+  text-decoration: none;
+  padding: 10px;
+  color: #2F323A;
+}
+header {
+  margin: 0 auto;
+  background-color: #DADDD8;
+  color: #03191E;
+}
+body {
+  margin: 0;
+  background-color: #ECEBE4;
+}
+.content-wrap {
+  max-width: 950px;
+  /*margin: 0 auto;*/
+  padding: 10px 25px;
+  overflow: auto;
+}
+
+/* Header Styles*/
+#profileImage {
+  margin: 10px;
+  width: 15%;
+  min-width: 50px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 2px solid blue;
+}
+.col-narrow {
+  width: 30%;
+  float: left;
+}
+.col-wide {
+  float: left;
+  width: 70%;
+}
+h1 {
+  margin: 5%;
+  display: inline-block;
+  border: 2px solid red;
+}
