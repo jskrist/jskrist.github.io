@@ -59,7 +59,7 @@ function startGame() {
       }
       resizeCanvas(canvasDiv.width, canvasDiv.height)
       gameStarted = true;
-      a.text = "Restart Game";
+      a.text = "End Game";
       a.onclick = resetGame;
     }
     return false;
@@ -69,6 +69,7 @@ function resetGame() {
   // Reset Game Parameters
 
   // reset the link's callback
+  //canvasDiv.height = 1;
   resizeCanvas(1,1)
   gameStarted = false;
   a.onclick = startGame;
@@ -78,10 +79,14 @@ function resetGame() {
 
 function resizeGame() {
   if(gameStarted || !canvasCreated) {
-    canvasDiv.width = screen.width * 0.9;
+    canvasDiv.width = (windowWidth < screen.width ? windowWidth : screen.width) * 0.9;
     canvasDiv.height = canvasDiv.width*9.0/16.0;
     if(canvasCreated) {
       resizeCanvas(canvasDiv.width, canvasDiv.height)
     }
   }
+}
+
+function windowResized() {
+  resizeGame();
 }

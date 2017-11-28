@@ -35,9 +35,10 @@ header {
 #defaultCanvas {
   margin-top: 20px;
   margin-left: 5%;
+  margin-right: 5%;
   /*margin-right: 5%;*/
   /*margin: auto;*/
-  width: 90%;
+  /*width: 90%;*/
   /*border:1px solid #000000;*/
   display: none;
 }
