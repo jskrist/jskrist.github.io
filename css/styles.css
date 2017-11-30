@@ -42,16 +42,6 @@ body {
   padding: 10px 25px;
   overflow: auto;
 }
-
-/* Header Styles*/
-#profileImage {
-  margin: 10px;
-  width: 15%;
-  min-width: 50px;
-  border-radius: 50%;
-  display: inline-block;
-  border: 2px solid blue;
-}
 .col-narrow {
   width: 30%;
   float: left;
@@ -63,5 +53,46 @@ body {
 h1 {
   margin: 5%;
   display: inline-block;
-  border: 2px solid red;
+  /*border: 2px solid red;*/
+}
+
+/*
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  main page
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+#profileImage {
+  margin: 10px;
+  width: 15%;
+  min-width: 50px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 2px solid blue;
+}
+
+/*
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  portfolio
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+section h1 {
+  margin: 5%;
+  display: block;
+  /*border: 2px solid red;*/
+}
+.portfolioIcon {
+  border-radius: 20px;
+  height: 100px;
+  width: 100px;
+}
+.portfolioItem {
+  display: inline-block;
+}
+.portfolioImg img {
+  box-shadow: 0px 0px 10px #03191E;
+  border-radius: 10px;
+}
+.portfolioImg a {
+  text-decoration: none;
+  color: #2F323A;
 }
