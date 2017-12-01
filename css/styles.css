@@ -17,10 +17,12 @@ html {
   box-sizing: inherit;
 }
 nav {
-  min-width: 300px;
+  /*min-width: 100px;*/
+  /*width: 100%;*/
   margin: 0;
   background-color: #CAC4CE;
   text-align: center;
+  border: 2px solid red;
 }
 nav a {
   text-decoration: none;
@@ -85,14 +87,30 @@ section h1 {
   height: 100px;
   width: 100px;
 }
-.portfolioItem {
+/*.portfolioItem {
   display: inline-block;
-}
+}*/
 .portfolioImg img {
+  max-width: 80%;
+  /*max-height: 80%;*/
   box-shadow: 0px 0px 10px #03191E;
   border-radius: 10px;
 }
 .portfolioImg a {
   text-decoration: none;
   color: #2F323A;
+}
+
+/* MEDIA QURIES */
+@media (min-width: 700px) {
+  .portfolioItem {
+    width: 350px;
+    height: 350px;
+    display: inline-block;
+  }
+}
+@media (max-width: 550px) {
+  .portfolioItem {
+    display: block;
+  }
 }
