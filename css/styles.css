@@ -10,6 +10,14 @@ light to dark:
  */
 
 /* Global */
+:root {
+  --color-Alabaster: #ECEBE4;
+  --color-Gainsboro: #DADDD8;
+  --color-Lavander-Gray: #CAC4CE;
+  --color-Gunmetal: #2F323A;
+  --color-Rich-Black: #03191E;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -20,9 +28,9 @@ nav {
   /*min-width: 100px;*/
   /*width: 100%;*/
   margin: 0;
-  background-color: #CAC4CE;
+  background-color: var(--color-Lavander-Gray);
   text-align: center;
-  border: 2px solid red;
+  /*border: 2px solid red;*/
 }
 nav a {
   text-decoration: none;
@@ -69,7 +77,7 @@ h1 {
   min-width: 50px;
   border-radius: 50%;
   display: inline-block;
-  border: 2px solid blue;
+  /*border: 2px solid blue;*/
 }
 
 /*
@@ -87,9 +95,6 @@ section h1 {
   height: 100px;
   width: 100px;
 }
-/*.portfolioItem {
-  display: inline-block;
-}*/
 .portfolioImg img {
   max-width: 80%;
   /*max-height: 80%;*/
