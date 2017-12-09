@@ -1,15 +1,6 @@
-/* Color Scheme
-
-light to dark:
-
-#ECEBE4 - Alabaster
-#DADDD8 - Gainsboro
-#CAC4CE - Lavander Gray
-#2F323A - Gunmetal
-#03191E - Rich Black
- */
-
 /* Global */
+
+/* Color Scheme */
 :root {
   --color-Alabaster: #ECEBE4;
   --color-Gainsboro: #DADDD8;
@@ -35,16 +26,28 @@ nav {
 nav a {
   text-decoration: none;
   padding: 10px;
-  color: #2F323A;
+  color: var(--color-Gunmetal);
 }
 header {
   margin: 0 auto;
-  background-color: #DADDD8;
-  color: #03191E;
+  background-color: var(--color-Gainsboro);
+  color: var(--color-Rich-Black);
 }
 body {
   margin: 0;
-  background-color: #ECEBE4;
+  background-color: var(--color-Alabaster);
+}
+footer {
+  text-decoration: none;
+  margin: 0 auto;
+  background-color: var(--color-Rich-Black);
+}
+footer a {
+  text-decoration: none;
+  padding: 10px;
+  font-size: 14px;
+  color: var(--color-Alabaster);
+  display: block;
 }
 .content-wrap {
   max-width: 950px;
@@ -98,12 +101,12 @@ section h1 {
 .portfolioImg img {
   max-width: 80%;
   /*max-height: 80%;*/
-  box-shadow: 0px 0px 10px #03191E;
+  box-shadow: 0px 0px 10px var(--color-Rich-Black);
   border-radius: 10px;
 }
 .portfolioImg a {
   text-decoration: none;
-  color: #2F323A;
+  color: var(--color-Gunmetal);
 }
 
 /* MEDIA QURIES */
