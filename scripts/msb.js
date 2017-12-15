@@ -14,12 +14,11 @@ function getImageSize(selector) {
 
   var backgroundIm = $(selector).css("background-image");
   var imSrc = backgroundIm.replace(/^url\(\"?|\"?\)$/g, "");
-  // var imSrc = backgroundIm.substring(5, backgroundIm.length - 2);
+
   var image = new Image();
   image.src = imSrc;
   var w = image.width,
       h = image.height;
-  alert("Image " + imSrc + " has height: " + h + " and width: " + w);
 
   return [w, h];
 
