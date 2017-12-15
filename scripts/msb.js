@@ -2,8 +2,6 @@ window.onload = updateButtonWidth;
 window.onresize = updateButtonWidth;
 function updateButtonWidth(){
 
-  alert("I am an alert box!");
-
   var buttons = $("button");
   for( var btnIdx = 0; btnIdx < buttons.length; btnIdx++ ) {
     [w, h] = getImageSize("#"+buttons[btnIdx].id)
@@ -20,6 +18,8 @@ function getImageSize(selector) {
   image.src = imSrc;
   var w = image.width,
       h = image.height;
+  alert("Image " + imSrc + " has height: " + h + " and width: " + w);
+
   return [w, h];
 
 }
