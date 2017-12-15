@@ -1,0 +1,96 @@
+/* Color Scheme
+
+light to dark:
+
+#ffe303 - Yellow
+#fffffb - White
+#95cd44 - Liz Green
+#1b6fd1 - Blue
+#69747a - Grey
+*/
+
+/* Global */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 5px;
+}
+
+@media (max-width: 735px) {
+.song-1 {
+  background-image: url("/images/TheMagicSchoolBus_360x254.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  float: left;
+  padding: 0;
+  border-radius: 18px;
+  width: 180px;
+  height:127px;
+  display: inline-block;
+}
+.song-2 {
+  background-image: url("/images/msb_Rides_Again_360x254.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  float: right;
+  padding: 0;
+  border-radius: 18px;
+  width: 180px;
+  height: 127px;
+  display: inline-block;
+}
+}
+@media (min-width: 736px) {
+  .song-1 {
+    background-image: url("/images/TheMagicSchoolBus_360x254.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    float: left;
+    padding: 0;
+    border-radius: 36px;
+    width: 360px;
+    height:254px;
+    display: inline-block;
+  }
+  .song-2 {
+    background-image: url("/images/msb_Rides_Again_360x254.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+    padding: 0;
+    border-radius: 36px;
+    width: 360px;
+    height: 254px;
+    display: inline-block;
+  }
+}
+
+/*.song-1 {
+  background-image: url("/images/TheMagicSchoolBus_360x254.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  float: left;
+  width: 360px;
+  height:254px;
+  display: inline-block;
+}
+.song-2 {
+  background-image: url("/images/msb_Rides_Again_360x254.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  float: right;
+  width: 360px;
+  height: 254px;
+  display: inline-block;
+}*/
