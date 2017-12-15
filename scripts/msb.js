@@ -7,6 +7,7 @@ function updateButtonWidth(){
     [w, h] = getImageSize("#"+buttons[btnIdx].id)
     buttons[btnIdx].style.height = buttons[btnIdx].offsetWidth * h/w + "px";
     buttons[btnIdx].style.borderRadius = buttons[btnIdx].offsetWidth * 0.1 + "px";
+    buttons[btnIdx].onclick = function(){playAudio(this.id)};
   }
 }
 
@@ -22,4 +23,18 @@ function getImageSize(selector) {
 
   return [w, h];
 
+}
+
+var audio = null;
+
+function playAudio(selector) {
+
+  if(audio && audio.length > 0) {
+    audio[0].pause();
+    audio[0].currentTime = 0
+  }
+  audio = $("button[id=\"" + selector + "\"]>audio");
+  if(audio && audio.length > 0) {
+    audio[0].play();
+  }
 }

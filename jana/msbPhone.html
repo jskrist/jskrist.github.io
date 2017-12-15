@@ -11,10 +11,20 @@
   <body>
     <header></header>
     <div class="centerLeft">
-      <button onclick="updateButtonWidth()" type="button" id="song-1" class="btn"></button>
+      <button type="button" id="song-1" class="btn">
+        <audio>
+          <source src="/media/old_MSB_theme.ogg" type="audio/ogg">
+          <source src="/media/old_MSB_theme.wav" type="audio/wav">
+        </audio>
+      </button>
     </div>
     <div class="centerRight">
-      <button type="button" id="song-2" class="btn"></button>
+      <button type="button" id="song-2" class="btn">
+        <audio>
+          <source src="/media/new_MSB_theme.ogg" type="audio/ogg">
+          <source src="/media/new_MSB_theme.wav" type="audio/wav">
+        </audio>
+      </button>
     </div>
     <div class="Left">
       <button type="button" id="producer" class="btn"></button>
