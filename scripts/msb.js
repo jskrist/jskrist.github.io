@@ -25,6 +25,8 @@ function getImageSize(selector) {
 
 }
 
+
+
 var audio = null;
 
 function playAudio(selector) {
