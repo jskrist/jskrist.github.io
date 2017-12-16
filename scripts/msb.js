@@ -2,7 +2,7 @@ window.onload = updateButtonWidth;
 window.onresize = updateButtonWidth;
 function updateButtonWidth(){
 
-  alert("Debug session " + 27)
+  // alert("Debug session " + 28)
   var buttons = $("button");
   for( var btnIdx = 0; btnIdx < buttons.length; btnIdx++ ) {
     [w, h] = getImageSize("#"+buttons[btnIdx].id)
@@ -29,7 +29,6 @@ function getImageSize(selector) {
 var audio = null;
 function playAudio(selector) {
 
-  alert("in playAudio")
   if(audio && audio.length > 0) {
     audio[0].pause();
     audio[0].currentTime = 0
@@ -43,6 +42,9 @@ function playAudio(selector) {
   for( var srcIdx = 0; srcIdx < audioSrc.length; srcIdx++) {
     curSrc = audioSrc[srcIdx].src;
     srcNumber = curSrc.match(/_\d/);
+    if(!srcNumber) {
+      break;
+    }
     srcNumber = srcNumber[0].replace(/_/, "");
     srcNumber = parseInt(srcNumber);
     curSrc = curSrc.replace(/_\d/, "_" + (srcNumber+1));
@@ -55,7 +57,6 @@ function playAudio(selector) {
 }
 
 function updateAudioSrc(audio, newSrc) {
-  alert(newSrc)
   audio.src = newSrc;
   return audio;
 }
@@ -77,7 +78,6 @@ function cycleAudio(filename, audio) {
       //   // log(jqXHR);
       //   // log(errorThrown);
       filename = filename.replace(/_\d/, '_1');
-      alert("error: " + filename)
       audio = updateAudioSrc(audio, filename);
     }
   });
