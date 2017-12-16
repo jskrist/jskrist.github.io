@@ -2,7 +2,7 @@ window.onload = updateButtonWidth;
 window.onresize = updateButtonWidth;
 function updateButtonWidth(){
 
-  alert("Debug seesion " + 7)
+  alert("Debug seesion " + 8)
   var buttons = $("button");
   for( var btnIdx = 0; btnIdx < buttons.length; btnIdx++ ) {
     [w, h] = getImageSize("#"+buttons[btnIdx].id)
@@ -35,18 +35,18 @@ function playAudio(selector) {
     audio[0].currentTime = 0
   }
   audio = $("button[id=\"" + selector + "\"]>audio");
-  // if(!audio || audio.length == 0) {
-  //   return;
-  // }
-  //
-  // audioSrc = $("button[id=\"" + selector + "\"]>audio>source");
-  // var curSrc = null;
-  // for( var srcIdx = 0; srcIdx < audioSrc.length; srcIdx++) {
-  //   curSrc = audioSrc[srcIdx].src;
-  //   curSrc = curSrc.replace(/(?<=_)\d/g, Number(curSrc.match(/(?<=_)\d/g))+1);
-  //   // audioSrc[srcIdx] = cycleAudio(curSrc, audioSrc[srcIdx])
-  // }
-  // audio[0].load();
+  if(!audio || audio.length == 0) {
+    return;
+  }
+
+  audioSrc = $("button[id=\"" + selector + "\"]>audio>source");
+  var curSrc = null;
+  for( var srcIdx = 0; srcIdx < audioSrc.length; srcIdx++) {
+    curSrc = audioSrc[srcIdx].src;
+    curSrc = curSrc.replace(/(?<=_)\d/g, Number(curSrc.match(/(?<=_)\d/g))+1);
+    // audioSrc[srcIdx] = cycleAudio(curSrc, audioSrc[srcIdx])
+  }
+  audio[0].load();
   if(audio && audio.length > 0) {
     audio[0].play();
   }
