@@ -2,7 +2,7 @@ window.onload = updateButtonWidth;
 window.onresize = updateButtonWidth;
 function updateButtonWidth(){
 
-  alert("Debug seesion " + 4)
+  alert("Debug seesion " + 5)
   var buttons = $("button");
   for( var btnIdx = 0; btnIdx < buttons.length; btnIdx++ ) {
     [w, h] = getImageSize("#"+buttons[btnIdx].id)
@@ -59,17 +59,18 @@ function updateAudioSrc(audio, newSrc) {
 
 function cycleAudio(filename, audio) {
 
-  jQuery.ajax({
+  var result = jQuery.ajax({
     type: 'HEAD',
     url: filename,
     success: function(msg){
-      audio = updateAudioSrc(audio, filename);
-      return audio;
+      // audio = updateAudioSrc(audio, filename);
+      // return audio;
+      return true;
     },
     error: function(jqXHR, textStatus, errorThrown){
       // filename = filename.replace(/(?<=_)\d/g, 1);
       // updateAudioSrc(audio, filename);
-      // return audio;
+      return false;
       //   // log(jqXHR);
       //   // log(errorThrown);
     }
