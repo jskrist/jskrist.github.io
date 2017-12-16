@@ -69,7 +69,7 @@ function cycleAudio(filename, audio) {
     error: function(jqXHR, textStatus, errorThrown){
       filename = filename.replace(/(?<=_)\d/g, 1);
       audio = updateAudioSrc(audio, filename);
-      return audio;
+      // return audio;
     //   // log(jqXHR);
     //   // log(errorThrown);
     }
