@@ -53,8 +53,8 @@ function playAudio(selector) {
 }
 
 function updateAudioSrc(audio, newSrc) {
-  audio.src = newSrc;
-  return audio;
+  // audio.src = newSrc;
+  // return audio;
 }
 
 function cycleAudio(filename, audio) {
@@ -68,7 +68,7 @@ function cycleAudio(filename, audio) {
     },
     error: function(jqXHR, textStatus, errorThrown){
       filename = filename.replace(/(?<=_)\d/g, 1);
-      audio = updateAudioSrc(audio, filename);
+      updateAudioSrc(audio, filename);
       // return audio;
     //   // log(jqXHR);
     //   // log(errorThrown);
