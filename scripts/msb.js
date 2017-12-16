@@ -58,19 +58,19 @@ function updateAudioSrc(audio, newSrc) {
 
 function cycleAudio(filename, audio) {
 
-  jQuery.ajax({
-    type: 'HEAD',
-    url: filename,
-    success: function(msg){
-      audio = updateAudioSrc(audio, filename);
-      return audio;
-    },
-    error: function(jqXHR, textStatus, errorThrown){
-      filename = filename.replace(/(?<=_)\d/g, 1);
-      audio = updateAudioSrc(audio, filename);
-      return audio;
-      // log(jqXHR);
-      // log(errorThrown);
-    }
-  });
+  // jQuery.ajax({
+  //   type: 'HEAD',
+  //   url: filename,
+  //   success: function(msg){
+  //     audio = updateAudioSrc(audio, filename);
+  //     return audio;
+  //   },
+  //   error: function(jqXHR, textStatus, errorThrown){
+  //     filename = filename.replace(/(?<=_)\d/g, 1);
+  //     audio = updateAudioSrc(audio, filename);
+  //     return audio;
+  //     // log(jqXHR);
+  //     // log(errorThrown);
+  //   }
+  // });
 }
