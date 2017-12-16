@@ -51,26 +51,26 @@ function playAudio(selector) {
   }
 }
 
-// function updateAudioSrc(audio, newSrc) {
-//   audio.src = newSrc;
-//   return audio;
-// }
-//
-// function cycleAudio(filename, audio) {
-//
-//   jQuery.ajax({
-//     type: 'HEAD',
-//     url: filename,
-//     success: function(msg){
-//       audio = updateAudioSrc(audio, filename);
-//       return audio;
-//     },
-//     error: function(jqXHR, textStatus, errorThrown){
-//       filename = filename.replace(/(?<=_)\d/g, 1);
-//       audio = updateAudioSrc(audio, filename);
-//       return audio;
-//       // log(jqXHR);
-//       // log(errorThrown);
-//     }
-//   });
-// }
+function updateAudioSrc(audio, newSrc) {
+  audio.src = newSrc;
+  return audio;
+}
+
+function cycleAudio(filename, audio) {
+
+  jQuery.ajax({
+    type: 'HEAD',
+    url: filename,
+    success: function(msg){
+      audio = updateAudioSrc(audio, filename);
+      return audio;
+    },
+    error: function(jqXHR, textStatus, errorThrown){
+      filename = filename.replace(/(?<=_)\d/g, 1);
+      audio = updateAudioSrc(audio, filename);
+      return audio;
+      // log(jqXHR);
+      // log(errorThrown);
+    }
+  });
+}
