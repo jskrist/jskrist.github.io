@@ -34,11 +34,12 @@ function playAudio(selector) {
     audio[0].pause();
     audio[0].currentTime = 0
   }
+    alert("playAudio: 1")
   audio = $("button[id=\"" + selector + "\"]>audio");
   if(!audio || audio.length == 0) {
     return;
   }
-
+  alert("playAudio: 2")
   audioSrc = $("button[id=\"" + selector + "\"]>audio>source");
   var curSrc = null;
   for( var srcIdx = 0; srcIdx < audioSrc.length; srcIdx++) {
@@ -49,8 +50,10 @@ function playAudio(selector) {
     curSrc = curSrc.replace(/_\d/, "_" + srcNumber);
     audioSrc[srcIdx] = cycleAudio(curSrc, audioSrc[srcIdx])
   }
+  alert("playAudio: 3")
   audio[0].load();
   if(audio && audio.length > 0) {
+    alert("playAudio: 4")
     audio[0].play();
   }
 }
