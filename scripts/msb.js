@@ -34,43 +34,43 @@ function playAudio(selector) {
     audio[0].currentTime = 0
   }
   audio = $("button[id=\"" + selector + "\"]>audio");
-  if(!audio || audio.length == 0) {
-    return;
-  }
-
-  audioSrc = $("button[id=\"" + selector + "\"]>audio>source");
-  var curSrc = null;
-  for( var srcIdx = 0; srcIdx < audioSrc.length; srcIdx++) {
-    curSrc = audioSrc[srcIdx].src;
-    curSrc = curSrc.replace(/(?<=_)\d/g, Number(curSrc.match(/(?<=_)\d/g))+1);
-    // audioSrc[srcIdx] = cycleAudio(curSrc, audioSrc[srcIdx])
-  }
-  audio[0].load();
+  // if(!audio || audio.length == 0) {
+  //   return;
+  // }
+  //
+  // audioSrc = $("button[id=\"" + selector + "\"]>audio>source");
+  // var curSrc = null;
+  // for( var srcIdx = 0; srcIdx < audioSrc.length; srcIdx++) {
+  //   curSrc = audioSrc[srcIdx].src;
+  //   curSrc = curSrc.replace(/(?<=_)\d/g, Number(curSrc.match(/(?<=_)\d/g))+1);
+  //   // audioSrc[srcIdx] = cycleAudio(curSrc, audioSrc[srcIdx])
+  // }
+  // audio[0].load();
   if(audio && audio.length > 0) {
     audio[0].play();
   }
 }
 
-function updateAudioSrc(audio, newSrc) {
-  audio.src = newSrc;
-  return audio;
-}
-
-function cycleAudio(filename, audio) {
-
-  jQuery.ajax({
-    type: 'HEAD',
-    url: filename,
-    success: function(msg){
-      audio = updateAudioSrc(audio, filename);
-      return audio;
-    },
-    error: function(jqXHR, textStatus, errorThrown){
-      filename = filename.replace(/(?<=_)\d/g, 1);
-      audio = updateAudioSrc(audio, filename);
-      return audio;
-      // log(jqXHR);
-      // log(errorThrown);
-    }
-  });
-}
+// function updateAudioSrc(audio, newSrc) {
+//   audio.src = newSrc;
+//   return audio;
+// }
+//
+// function cycleAudio(filename, audio) {
+//
+//   jQuery.ajax({
+//     type: 'HEAD',
+//     url: filename,
+//     success: function(msg){
+//       audio = updateAudioSrc(audio, filename);
+//       return audio;
+//     },
+//     error: function(jqXHR, textStatus, errorThrown){
+//       filename = filename.replace(/(?<=_)\d/g, 1);
+//       audio = updateAudioSrc(audio, filename);
+//       return audio;
+//       // log(jqXHR);
+//       // log(errorThrown);
+//     }
+//   });
+// }
