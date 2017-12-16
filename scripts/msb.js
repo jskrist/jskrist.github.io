@@ -76,10 +76,13 @@ function cycleAudio(filename, audio) {
     }
   });
 
-  if(result) {
-    audio = updateAudioSrc(audio, filename);
-  } else {
-    filename = filename.replace(/(?<=_)\d/g, 1);
-    updateAudioSrc(audio, filename);
-  }
+  alert(result)
+
+  // if(result) {
+  //   audio = updateAudioSrc(audio, filename);
+  // } else {
+  //   filename = filename.replace(/(?<=_)\d/g, 1);
+  //   alert(filename)
+  //   updateAudioSrc(audio, filename);
+  // }
 }
