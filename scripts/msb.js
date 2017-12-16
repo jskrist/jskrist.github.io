@@ -2,7 +2,7 @@ window.onload = updateButtonWidth;
 window.onresize = updateButtonWidth;
 function updateButtonWidth(){
 
-  alert("Debug seesion " + 13)
+  alert("Debug seesion " + 14)
   var buttons = $("button");
   for( var btnIdx = 0; btnIdx < buttons.length; btnIdx++ ) {
     [w, h] = getImageSize("#"+buttons[btnIdx].id)
@@ -42,6 +42,8 @@ function playAudio(selector) {
   var curSrc = null;
   for( var srcIdx = 0; srcIdx < audioSrc.length; srcIdx++) {
     curSrc = audioSrc[srcIdx].src;
+    srcNumber = curSrc.match(/(?<=_)\d/);
+    alert(srcNumber)
     curSrc = curSrc.replace(/_\d/, '_1');
     audioSrc[srcIdx] = cycleAudio(curSrc, audioSrc[srcIdx])
   }
@@ -59,30 +61,31 @@ function updateAudioSrc(audio, newSrc) {
 
 function cycleAudio(filename, audio) {
 
-  var result = jQuery.ajax({
+  jQuery.ajax({
     type: 'HEAD',
     url: filename,
     success: function(msg){
-      // audio = updateAudioSrc(audio, filename);
-      // return audio;
-      return true;
+      audio = updateAudioSrc(audio, filename);
+      return audio;
+      // return true;
     },
     error: function(jqXHR, textStatus, errorThrown){
       // filename = filename.replace(/(?<=_)\d/g, 1);
       // updateAudioSrc(audio, filename);
-      return false;
+      // return false;
       //   // log(jqXHR);
       //   // log(errorThrown);
+      filename = filename.replace(/_\d/, '_1');
+      alert(filename)
+      audio = updateAudioSrc(audio, filename);
     }
   });
 
-  alert(result)
-
-  if(result) {
-    audio = updateAudioSrc(audio, filename);
-  } else {
-    filename = filename.replace(/_\d/, '_1');
-    alert(filename)
-    audio = updateAudioSrc(audio, filename);
-  }
+  // if(result) {
+  //   audio = updateAudioSrc(audio, filename);
+  // } else {
+  //   filename = filename.replace(/_\d/, '_1');
+  //   alert(filename)
+  //   audio = updateAudioSrc(audio, filename);
+  // }
 }
