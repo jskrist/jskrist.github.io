@@ -2,7 +2,7 @@ window.onload = updateButtonWidth;
 window.onresize = updateButtonWidth;
 function updateButtonWidth(){
 
-  alert("Debug session " + 25)
+  alert("Debug session " + 26)
   var buttons = $("button");
   for( var btnIdx = 0; btnIdx < buttons.length; btnIdx++ ) {
     [w, h] = getImageSize("#"+buttons[btnIdx].id)
@@ -43,19 +43,13 @@ function playAudio(selector) {
   for( var srcIdx = 0; srcIdx < audioSrc.length; srcIdx++) {
     curSrc = audioSrc[srcIdx].src;
     srcNumber = curSrc.match(/_\d/);
-    alert("playAudio: 2c - " + srcNumber)
     srcNumber = srcNumber[0].replace(/_/, "");
-    alert("playAudio: 2d")
     srcNumber = parseInt(srcNumber);
-    alert("playAudio: 2e")
-    alert(srcNumber)
-    curSrc = curSrc.replace(/_\d/, "_" + srcNumber);
+    curSrc = curSrc.replace(/_\d/, "_" + srcNumber+1);
     audioSrc[srcIdx] = cycleAudio(curSrc, audioSrc[srcIdx])
   }
-  alert("playAudio: 3")
   audio[0].load();
   if(audio && audio.length > 0) {
-    alert("playAudio: 4")
     audio[0].play();
   }
 }
