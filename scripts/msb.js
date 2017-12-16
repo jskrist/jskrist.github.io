@@ -2,14 +2,13 @@ window.onload = updateButtonWidth;
 window.onresize = updateButtonWidth;
 function updateButtonWidth(){
 
-  // alert("Debug session " + 28)
   var buttons = $("button");
   for( var btnIdx = 0; btnIdx < buttons.length; btnIdx++ ) {
     [w, h] = getImageSize("#"+buttons[btnIdx].id)
     buttons[btnIdx].style.height = buttons[btnIdx].offsetWidth * h/w + "px";
     buttons[btnIdx].style.borderRadius = buttons[btnIdx].offsetWidth * 0.1 + "px";
     buttons[btnIdx].onclick = function(){playAudio(this.id)};
-    // buttons[btnIdx].onmouseover = function(){playAudio(this.id)};
+    buttons[btnIdx].onmouseover = function(){playAudio(this.id)};
   }
 }
 
@@ -50,7 +49,9 @@ function playAudio(selector) {
     curSrc = curSrc.replace(/_\d/, "_" + (srcNumber+1));
     audioSrc[srcIdx] = cycleAudio(curSrc, audioSrc[srcIdx])
   }
-  audio[0].load();
+  if(audio[0].readyState < 2) {
+    audio[0].load();
+  }
   if(audio && audio.length > 0) {
     audio[0].play();
   }
@@ -62,31 +63,15 @@ function updateAudioSrc(audio, newSrc) {
 }
 
 function cycleAudio(filename, audio) {
-
   jQuery.ajax({
     type: 'HEAD',
     url: filename,
     success: function(msg){
       audio = updateAudioSrc(audio, filename);
-      return audio;
-      // return true;
     },
     error: function(jqXHR, textStatus, errorThrown){
-      // filename = filename.replace(/(?<=_)\d/g, 1);
-      // updateAudioSrc(audio, filename);
-      // return false;
-      //   // log(jqXHR);
-      //   // log(errorThrown);
       filename = filename.replace(/_\d/, '_1');
       audio = updateAudioSrc(audio, filename);
     }
   });
-
-  // if(result) {
-  //   audio = updateAudioSrc(audio, filename);
-  // } else {
-  //   filename = filename.replace(/_\d/, '_1');
-  //   alert(filename)
-  //   audio = updateAudioSrc(audio, filename);
-  // }
 }
