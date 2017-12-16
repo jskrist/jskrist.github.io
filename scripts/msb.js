@@ -8,7 +8,6 @@ function updateButtonWidth(){
     buttons[btnIdx].style.height = buttons[btnIdx].offsetWidth * h/w + "px";
     buttons[btnIdx].style.borderRadius = buttons[btnIdx].offsetWidth * 0.1 + "px";
     buttons[btnIdx].onclick = function(){playAudio(this.id)};
-    buttons[btnIdx].onmouseover = function(){playAudio(this.id)};
   }
 }
 
