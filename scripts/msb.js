@@ -43,7 +43,7 @@ function playAudio(selector) {
   for( var srcIdx = 0; srcIdx < audioSrc.length; srcIdx++) {
     curSrc = audioSrc[srcIdx].src;
     curSrc = curSrc.replace(/(?<=_)\d/g, Number(curSrc.match(/(?<=_)\d/g))+1);
-    audioSrc[srcIdx] = cycleAudio(curSrc, audioSrc[srcIdx])
+    // audioSrc[srcIdx] = cycleAudio(curSrc, audioSrc[srcIdx])
   }
   audio[0].load();
   if(audio && audio.length > 0) {
