@@ -2,7 +2,7 @@ window.onload = updateButtonWidth;
 window.onresize = updateButtonWidth;
 function updateButtonWidth(){
 
-  alert("Debug seesion " + 6)
+  alert("Debug seesion " + 7)
   var buttons = $("button");
   for( var btnIdx = 0; btnIdx < buttons.length; btnIdx++ ) {
     [w, h] = getImageSize("#"+buttons[btnIdx].id)
@@ -53,6 +53,7 @@ function playAudio(selector) {
 }
 
 function updateAudioSrc(audio, newSrc) {
+  alert(newSrc)
   audio.src = newSrc;
   return audio;
 }
@@ -78,11 +79,11 @@ function cycleAudio(filename, audio) {
 
   alert(result)
 
-  // if(result) {
-  //   audio = updateAudioSrc(audio, filename);
-  // } else {
-  //   filename = filename.replace(/(?<=_)\d/g, 1);
-  //   alert(filename)
-  //   updateAudioSrc(audio, filename);
-  // }
+  if(result) {
+    audio = updateAudioSrc(audio, filename);
+  } else {
+    filename = filename.replace(/(?<=_)\d/g, 1);
+    alert(filename)
+    audio = updateAudioSrc(audio, filename);
+  }
 }
