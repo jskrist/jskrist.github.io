@@ -2,7 +2,7 @@ window.onload = updateButtonWidth;
 window.onresize = updateButtonWidth;
 function updateButtonWidth(){
 
-  alert("Debug session " + 22)
+  alert("Debug session " + 23)
   var buttons = $("button");
   for( var btnIdx = 0; btnIdx < buttons.length; btnIdx++ ) {
     [w, h] = getImageSize("#"+buttons[btnIdx].id)
@@ -34,22 +34,20 @@ function playAudio(selector) {
     audio[0].pause();
     audio[0].currentTime = 0
   }
-  alert("playAudio: 1")
   audio = $("button[id=\"" + selector + "\"]>audio");
   if(!audio || audio.length == 0) {
     return;
   }
-  alert("playAudio: 2")
   audioSrc = $("button[id=\"" + selector + "\"]>audio>source");
   var curSrc = null;
   for( var srcIdx = 0; srcIdx < audioSrc.length; srcIdx++) {
-    alert("playAudio: 2a")
     curSrc = audioSrc[srcIdx].src;
-    alert("playAudio: 2b")
     srcNumber = curSrc.match(/_\d/);
     alert("playAudio: 2c - " + srcNumber)
-    srcNumber = srcNumber.replace(/_/, "");
+    srcNumber = srcNumber.replace(/_/g, "");
     alert("playAudio: 2d")
+    srcNumber = parseInt(srcNumber);
+    alert("playAudio: 2e")
     alert(srcNumber)
     curSrc = curSrc.replace(/_\d/, "_" + srcNumber);
     audioSrc[srcIdx] = cycleAudio(curSrc, audioSrc[srcIdx])
