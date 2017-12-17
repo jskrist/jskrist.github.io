@@ -67,10 +67,12 @@ function cycleAudio(filename, audio) {
     url: filename,
     success: function(msg){
       audio = updateAudioSrc(audio, filename);
+      return audio;
     },
     error: function(jqXHR, textStatus, errorThrown){
       filename = filename.replace(/_\d/, '_1');
       audio = updateAudioSrc(audio, filename);
+      return audio;
     }
   });
 }
