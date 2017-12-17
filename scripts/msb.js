@@ -49,9 +49,9 @@ function playAudio(selector) {
     audioSrc[srcIdx] = cycleAudio(curSrc, audioSrc[srcIdx])
   }
   alert("ReadyState: " + audio[0].readyState)
-  // if(audio[0].readyState < 2) {
+  if(audio[0].readyState < 2) {
     audio[0].load();
-  // }
+  }
   if(audio && audio.length > 0) {
     audio[0].play();
   }
