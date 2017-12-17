@@ -25,6 +25,7 @@ function getImageSize(selector) {
 }
 
 var audio = null;
+var srcUpdated = false;
 function playAudio(selector) {
 
   if(audio && audio.length > 0) {
@@ -48,7 +49,11 @@ function playAudio(selector) {
     curSrc = curSrc.replace(/_\d/, "_" + (srcNumber+1));
     audioSrc[srcIdx] = cycleAudio(curSrc, audioSrc[srcIdx])
   }
-
+  if(srcUpdated) {
+    srcUpdated = false;
+    alert("ReadyState: " + audio[0].readyState);
+    audio[0].load();
+  }
   if(audio && audio.length > 0) {
     audio[0].play();
   }
@@ -57,8 +62,7 @@ function playAudio(selector) {
 function updateAudioSrc(audio, newSrc) {
   if(audio.src != newSrc) {
     audio.src = newSrc;
-    alert("ReadyState: " + audio.readyState)
-    audio.load();
+    srcUpdated = true;
   }
   return audio;
 }
