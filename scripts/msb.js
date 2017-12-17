@@ -48,6 +48,7 @@ function playAudio(selector) {
     curSrc = curSrc.replace(/_\d/, "_" + (srcNumber+1));
     audioSrc[srcIdx] = cycleAudio(curSrc, audioSrc[srcIdx])
   }
+  alert("ReadyState: " + audio[0].readyState)
   // if(audio[0].readyState < 2) {
     audio[0].load();
   // }
