@@ -51,7 +51,6 @@ function playAudio(selector) {
   }
   if(srcUpdated) {
     srcUpdated = false;
-    alert("ReadyState: " + audio[0].readyState);
     audio[0].load();
   }
   if(audio && audio.length > 0) {
