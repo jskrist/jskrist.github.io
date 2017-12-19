@@ -1,8 +1,23 @@
+// var ctx = new webkitAudioContext();
+// ctx.decodeAudioData(req.response, function(buffer) {
+//   console.log(buffer);
+//   console.log(buffer.duration); // 116
+// }
+
 window.onload = updateButtonWidth;
 window.onresize = updateButtonWidth;
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  updateButtonWidth();
+});
+
+// $(document).ready(function(){
+//   updateButtonWidth();
+// });
+
 function updateButtonWidth(){
 
-  var buttons = $("button");
+  var buttons = document.querySelectorAll("button");
   for( var btnIdx = 0; btnIdx < buttons.length; btnIdx++ ) {
     [w, h] = getImageSize("#"+buttons[btnIdx].id)
     buttons[btnIdx].style.height = buttons[btnIdx].offsetWidth * h/w + "px";
@@ -13,6 +28,10 @@ function updateButtonWidth(){
 
 function getImageSize(selector) {
 
+// q = document.querySelectorAll("button");
+// w = q[0];
+// q = window.getComputedStyle(w)
+// q.backgroundImage
   var backgroundIm = $(selector).css("background-image");
   var imSrc = backgroundIm.replace(/^url\(\"?|\"?\)$/g, "");
 
