@@ -19,20 +19,19 @@ function updateButtonWidth(){
 
   var buttons = document.querySelectorAll("button");
   for( var btnIdx = 0; btnIdx < buttons.length; btnIdx++ ) {
-    [w, h] = getImageSize("#"+buttons[btnIdx].id)
+    [w, h] = getImageSize(buttons[btnIdx])
     buttons[btnIdx].style.height = buttons[btnIdx].offsetWidth * h/w + "px";
     buttons[btnIdx].style.borderRadius = buttons[btnIdx].offsetWidth * 0.1 + "px";
     buttons[btnIdx].onclick = function(){playAudio(this.id)};
   }
 }
 
-function getImageSize(selector) {
+function getImageSize(btn) {
 
-// q = document.querySelectorAll("button");
-// w = q[0];
-// q = window.getComputedStyle(w)
-// q.backgroundImage
-  var backgroundIm = $(selector).css("background-image");
+  // btn = document.querySelector(selector);
+  css = window.getComputedStyle(btn);
+  backgroundIm = css.backgroundImage;
+  // var backgroundIm = $(selector).css("background-image");
   var imSrc = backgroundIm.replace(/^url\(\"?|\"?\)$/g, "");
 
   var image = new Image();
