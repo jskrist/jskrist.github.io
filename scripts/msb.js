@@ -42,6 +42,8 @@ function getImageSize(btn) {
   return [w, h];
 }
 
+// loadSound('http://127.0.0.1:3000/media/frizzle_6.ogg')
+
 var audio = null;
 var srcUpdated = false;
 function playAudio(selector) {
@@ -99,3 +101,128 @@ function cycleAudio(filename, audio) {
     }
   });
 }
+
+var context;
+var buffers = [];
+buffers.frizzle = [];
+buffers.arnold = [];
+buffers.producer = [];
+buffers.da = [];
+buffers.carlos = [];
+buffers.janet = [];
+buffers.jyoti = [];
+buffers.keesha = [];
+buffers.ralphie = [];
+buffers.phoebe = [];
+buffers.tim = [];
+buffers.wanda = [];
+var personRe = /([a-z]+)_(\d)/;
+var currentBuffer = null;
+var source = null;
+
+window.addEventListener('load', init, false);
+function init() {
+  try {
+    // Fix up for prefixing
+    window.AudioContext = window.AudioContext||window.webkitAudioContext;
+    context = new AudioContext();
+    source = context.createBufferSource();
+    loadAllAudio();
+  }
+  catch(e) {
+    alert('Web Audio API is not supported in this browser');
+  }
+}
+
+function loadAllAudio() {
+  people = Object.keys(buffers);
+  audioPath = '/media/';
+  audio = document.createElement('audio');
+  if(audio.canPlayType("audio/ogg") === "probably") {
+    ext = ".ogg";
+  }
+  else {
+    ext = ".wav";
+  }
+  for( var personIdx = 0; personIdx < people.length; personIdx++) {
+    curPerson = people[personIdx];
+    srcNum = 1;
+    personLimit = sessionStorage.getItem(curPerson+'Limit');
+    // while(!personLimit || personLimit < srcNum) {
+      url = audioPath + curPerson + '_' + srcNum + ext;
+      //loadSound(url)
+      srcNum++;
+      personLimit = sessionStorage.getItem(curPerson+'Limit');
+    // }
+  }
+  if(srcUpdated) {
+    srcUpdated = false;
+    audio[0].load();
+  }
+  if(audio && audio.length > 0) {
+    audio[0].play();
+  }
+}
+
+function loadSound(url) {
+
+  jQuery.ajax({
+    type: 'HEAD',
+    url: url,
+    success: function(msg){
+      audio = updateAudioSrc(audio, filename);
+      return audio;
+    },
+    error: function(jqXHR, textStatus, errorThrown){
+      filename = filename.replace(/_\d/, '_1');
+      audio = updateAudioSrc(audio, filename);
+      return audio;
+    }
+  });
+
+  var request = new XMLHttpRequest();
+  request.open('GET', url, true);
+  request.responseType = 'arraybuffer';
+  // Decode asynchronously
+  request.onload = function() {
+    context.decodeAudioData(request.response, function(buffer) {
+      if(currentBuffer) {
+        currentBuffer.concat(buffer);
+      }
+    }, function(ME) {
+			onError(ME, url)
+		});
+  }
+  var reMatch = url.match(personRe);
+  if(reMatch) {
+    currentBuffer = buffers[reMatch[1]];
+  }
+  else {
+    currentBuffer = null;
+  }
+  request.send();
+}
+
+function onError(ME, url) {
+  var reMatch = url.match(personRe);
+  if(reMatch) {
+    sessionStorage.setItem(reMatch[1]+'Limit', reMatch[2]-1)
+  }
+}
+// loadSound('http://127.0.0.1:3000/media/frizzle_6.ogg')
+function playSound(buffer, person) {
+  var personLimit = sessionStorage.getItem(person+'Limit');
+  var currentBufferNumber = sessionStorage.getItem(person+'CurrentBuffer');
+  if(personLimit && currentBufferNumber) {
+    currentBufferNumber = (currentBufferNumber) % personLimit;
+  }
+  else {
+    currentBufferNumber = 0;
+  }
+  sessionStorage.setItem(person+'CurrentBuffer', currentBufferNumber);
+  source.buffer = buffers[person][currentBufferNumber];
+  source.connect(context.destination);       // connect the source to the context's destination (the speakers)
+  source.start(0);                           // play the source now
+                                             // note: on older systems, may have to use deprecated noteOn(time);
+}
+// playSound(frizzleBuffer[1]); playSound(frizzleBuffer[2]), playSound(frizzleBuffer[3]); playSound(frizzleBuffer[4])
