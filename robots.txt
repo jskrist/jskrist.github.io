@@ -1,0 +1,26 @@
+User-agent: *
+Disallow: /experimental/
+
+User-agent: *
+Disallow: /media/
+
+User-agent: *
+Disallow: /jana/
+
+User-agent: *
+Disallow: /portfolio/
+
+User-agent: *
+Disallow: /archive/
+
+User-agent: *
+Disallow: /css/
+
+User-agent: *
+Disallow: /js/
+
+User-agent: *
+Disallow: /scripts/
+
+User-agent: *
+Disallow: /images/
