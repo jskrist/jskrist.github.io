@@ -3,6 +3,9 @@
   width:2ch;
   margin-right:1ch;
 }
+.university-img {
+  border-radius: 50%;
+}
 .tight-right {
   margin-right: 0px;
 }
