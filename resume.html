@@ -49,8 +49,15 @@
             <li class="nav-item">
               <a class="nav-link" href="/aboutMe.html">About</a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/resume.html">Résumé <span class="sr-only">(current)</span></a>
+            <li class="nav-item dropdown active">
+              <a class="nav-link dropdown-toggle" href="/resume.html" data-toggle="dropdown">
+                Résumé <span class="sr-only">(current)</span>
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/resume.html#education">Education</a>
+                <a class="dropdown-item" href="/resume.html#programming">Skills</a>
+                <a class="dropdown-item" href="/resume.html#work-experience">Work Experience</a>
+              </div>
             </li>
           </ul>
         </div>
@@ -64,37 +71,40 @@
           </div>
         </div>
         <!-- Education -->
-        <hr class="featurette-divider">
-        <div class="row">
-          <div class="col-md-1"></div>
-          <div class="col-md-8">
-            <h3>
-              <img class="section-icon" src="/media/glyph-iconset/svg/si-glyph-congratulation-hat.svg" alt="Education">
-            </h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-1"></div>
-          <div class="col-md-10">
-            <div class="row text-center">
-              <div class="col-md-4">
-                <img class="university-img" src="/media/images/WAM.png" alt="7 DOF Robotic Arm"  width="75%">
-                <h5>ARIZONA STATE UNIVERSITY (ASU)</h5>
-                <p>M.S.E., Mechanical Engineering <span class="text-muted">Dec&nbsp;2011</span></p>
-              </div>
-              <div class="col-md-4">
-                <img class="university-img" src="/media/images/solarCar.png" alt="Solar Car" width="75%">
-                <h5>ILLINOIS STATE UNIVERSITY (ISU)</h5>
-                <p>B.S., Physics (With Honors) <span class="text-muted">Aug&nbsp;2010</span></p>
-              </div>
-              <div class="col-md-4">
-                <img class="university-img" src="/media/images/mcsb.gif" alt="Circuit board animation" width="75%">
-                <h5>UNIVERSITY OF ILLINOIS (UIUC)</h5>
-                <p>B.S., Mechanical Engineering <span class="text-muted">May&nbsp;2010</span></p>
-              </div>
+        <div id="education">
+          <hr class="featurette-divider">
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-8">
+              <h3>
+                <img class="section-icon" src="/media/glyph-iconset/svg/si-glyph-congratulation-hat.svg" alt="Education">
+                Education
+              </h3>
             </div>
           </div>
-          <div class="col-md-1"></div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <div class="row text-center">
+                <div class="col-md-4">
+                  <img class="university-img" src="/media/images/WAM.png" alt="7 DOF Robotic Arm"  width="75%">
+                  <h5>ARIZONA STATE UNIVERSITY (ASU)</h5>
+                  <p>M.S.E., Mechanical Engineering <span class="text-muted">Dec&nbsp;2011</span></p>
+                </div>
+                <div class="col-md-4">
+                  <img class="university-img" src="/media/images/solarCar.png" alt="Solar Car" width="75%">
+                  <h5>ILLINOIS STATE UNIVERSITY (ISU)</h5>
+                  <p>B.S., Physics (With Honors) <span class="text-muted">Aug&nbsp;2010</span></p>
+                </div>
+                <div class="col-md-4">
+                  <img class="university-img" src="/media/images/mcsb.gif" alt="Circuit board animation" width="75%">
+                  <h5>UNIVERSITY OF ILLINOIS (UIUC)</h5>
+                  <p>B.S., Mechanical Engineering <span class="text-muted">May&nbsp;2010</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1"></div>
+          </div>
         </div>
         <!-- Skills -->
         <div id="programming">
@@ -117,171 +127,171 @@
             </div>
           </div>
           <div id="programming-skills" class="collapse show">
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-3">
-              <h5>&nbsp</h5>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-3">
+                <h5>&nbsp</h5>
+              </div>
+              <div class="col-md-6">
+                <div class="progress">
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Beginner</div>
+                  <div class="progress-bar bg-dark" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Intermediate</div>
+                  <div class="progress-bar bg-dark" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 24.5%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Advanced</div>
+                  <div class="progress-bar bg-dark" role="progressbar" style="width: 0.5%" aria-valuenow="75.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 24.5%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">Master</div>
+                </div>
+              </div>
             </div>
-            <div class="col-md-6">
-              <div class="progress">
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Beginner</div>
-                <div class="progress-bar bg-dark" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Intermediate</div>
-                <div class="progress-bar bg-dark" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 24.5%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Advanced</div>
-                <div class="progress-bar bg-dark" role="progressbar" style="width: 0.5%" aria-valuenow="75.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 24.5%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">Master</div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-3">
+                <h5>C++</h5>
+              </div>
+              <div class="col-md-6">
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-3">
+                <h5>Embedded C</h5>
+              </div>
+              <div class="col-md-6">
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="75.5" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-3">
+                <h5>FORTRAN</h5>
+              </div>
+              <div class="col-md-6">
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-3">
+                <h5>Java</h5>
+              </div>
+              <div class="col-md-6">
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-3">
+                <h5>MATLAB</h5>
+              </div>
+              <div class="col-md-6">
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="75.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-3">
+                <h5>Python</h5>
+              </div>
+              <div class="col-md-6">
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-3">
+                <h5>ROS</h5>
+              </div>
+              <div class="col-md-6">
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-3">
+                <h5>Simulink</h5>
+              </div>
+              <div class="col-md-6">
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="75.5" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-3">
+                <h5>Stateflow</h5>
+              </div>
+              <div class="col-md-6">
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-3">
+                <h5>VBA</h5>
+              </div>
+              <div class="col-md-6">
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-3">
-              <h5>C++</h5>
-            </div>
-            <div class="col-md-6">
-              <div class="progress">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-3">
-              <h5>Embedded C</h5>
-            </div>
-            <div class="col-md-6">
-              <div class="progress">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="75.5" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-3">
-              <h5>FORTRAN</h5>
-            </div>
-            <div class="col-md-6">
-              <div class="progress">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-3">
-              <h5>Java</h5>
-            </div>
-            <div class="col-md-6">
-              <div class="progress">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-3">
-              <h5>MATLAB</h5>
-            </div>
-            <div class="col-md-6">
-              <div class="progress">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="75.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-3">
-              <h5>Python</h5>
-            </div>
-            <div class="col-md-6">
-              <div class="progress">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-3">
-              <h5>ROS</h5>
-            </div>
-            <div class="col-md-6">
-              <div class="progress">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-3">
-              <h5>Simulink</h5>
-            </div>
-            <div class="col-md-6">
-              <div class="progress">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="75.5" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-3">
-              <h5>Stateflow</h5>
-            </div>
-            <div class="col-md-6">
-              <div class="progress">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-3">
-              <h5>VBA</h5>
-            </div>
-            <div class="col-md-6">
-              <div class="progress">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-        </div>
         </div>
 
         <hr class="featurette-divider w-75">
@@ -663,414 +673,416 @@
             <div class="col-md-1"></div>
           </div>
           <div id="language-skills" class="collapse">
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-3">
-              <h5>&nbsp</h5>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-3">
+                <h5>&nbsp</h5>
+              </div>
+              <div class="col-md-6">
+                <div class="progress">
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Beginner</div>
+                  <div class="progress-bar bg-dark" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Intermediate</div>
+                  <div class="progress-bar bg-dark" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 24.5%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Advanced</div>
+                  <div class="progress-bar bg-dark" role="progressbar" style="width: 0.5%" aria-valuenow="75.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 24.5%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">Master</div>
+                </div>
+              </div>
             </div>
-            <div class="col-md-6">
-              <div class="progress">
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Beginner</div>
-                <div class="progress-bar bg-dark" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Intermediate</div>
-                <div class="progress-bar bg-dark" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 24.5%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Advanced</div>
-                <div class="progress-bar bg-dark" role="progressbar" style="width: 0.5%" aria-valuenow="75.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 24.5%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">Master</div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-3">
+                <h5>American Sign Language</h5>
+              </div>
+              <div class="col-md-6">
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-3">
+                <h5>English</h5>
+              </div>
+              <div class="col-md-6">
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="75.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-3">
+                <h5>German</h5>
+              </div>
+              <div class="col-md-6">
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-3">
+                <h5>Macedonian</h5>
+              </div>
+              <div class="col-md-6">
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-3">
+                <h5>Portuguese</h5>
+              </div>
+              <div class="col-md-6">
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-3">
+                <h5>Spanish</h5>
+              </div>
+              <div class="col-md-6">
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="75.5" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-3">
-              <h5>American Sign Language</h5>
-            </div>
-            <div class="col-md-6">
-              <div class="progress">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-3">
-              <h5>English</h5>
-            </div>
-            <div class="col-md-6">
-              <div class="progress">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="75.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-3">
-              <h5>German</h5>
-            </div>
-            <div class="col-md-6">
-              <div class="progress">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-3">
-              <h5>Macedonian</h5>
-            </div>
-            <div class="col-md-6">
-              <div class="progress">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-3">
-              <h5>Portuguese</h5>
-            </div>
-            <div class="col-md-6">
-              <div class="progress">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-3">
-              <h5>Spanish</h5>
-            </div>
-            <div class="col-md-6">
-              <div class="progress">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="25.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="50.5" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 24.5%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.5%" aria-valuenow="75.5" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-        </div>
         </div>
         <!-- Experience -->
-        <hr class="featurette-divider">
-        <div class="row">
-          <div class="col-md-1"></div>
-          <div class="col-md-8">
-            <h3>
-              <img class="section-icon" src="/media/open-iconic/svg/briefcase.svg" alt="Work Experience">
-              Work Experience
-            </h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-6">
-            <h4>
-              The MathWorks inc., <span class="text-muted">Natick, MA</span>
-            </h4>
-          </div>
-          <div class="col"></div>
-          <div class="col-md-1">
-            <button class="btn btn-secondary float-right" type="button" name="toggle-web" data-toggle="collapse" data-target="#mathworks" aria-expanded="false" aria-controls="mathworks">
-              <img class="w-100" src="/media/open-iconic/svg/chevron-top.svg" alt="Toggle collapse">
-            </button>
-          </div>
-          <div class="col-md-1"></div>
-        </div>
-        <div id="mathworks" class="collapse show">
+        <div id="work-experience">
+          <hr class="featurette-divider">
           <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-6">
-              <h5>Customer&nbsp;Success&nbsp;Manager / Technical&nbsp;Evangelist</h5>
+            <div class="col-md-1"></div>
+            <div class="col-md-8">
+              <h3>
+                <img class="section-icon" src="/media/open-iconic/svg/briefcase.svg" alt="Work Experience">
+                Work Experience
+              </h3>
             </div>
-            <div class="col-md-2">
-              <h6><i>2015-Present</i></h6>
-            </div>
-            <div class="col-md-2"></div>
           </div>
           <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-6">
-              <ul>
-                <li>Work remotely.</li>
-                <li>Develop and manage relationships with key educational accounts in a large geographic territory (the Midwest).</li>
-                <li>Drive usage of MathWorks tools in Curriculum and Research.</li>
-                <li>Be the Voice of the Customer internally.</li>
-                <li>Develop internal tools to increase team and company performance.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-6">
-              <h5>Student&nbsp;Competitions Technical&nbsp;Evangelist (Edu&nbsp;Marketing)</h5>
-            </div>
-            <div class="col-md-2">
-              <h6><i>2013-2015</i></h6>
-            </div>
-            <div class="col-md-2"></div>
-          </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-6">
-              <ul>
-                <li>Developed <a href="https://www.mathworks.com/hardware-support/frdm-kl25z.html">embedded hardware support package</a> for Simulink.</li>
-                <li>Engaged with student developers participating in the <a href="https://community.nxp.com/docs/DOC-1284">Freescale Cup competition</a> (worldwide).</li>
-                <li>Produced <a href="https://www.mathworks.com/academia/student-competitions/nxp.html">videos and examples</a> explaining the use of MathWorks tools.</li>
-                <li>Developed internal tools to increase team and company performance.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-5">
-              <h5>Quality&nbsp;Engineer (Embedded&nbsp;Targets&nbsp;Team)</h5>
+              <h4>
+                The MathWorks inc., <span class="text-muted">Natick, MA</span>
+              </h4>
             </div>
             <div class="col"></div>
-            <div class="col-md-2">
-              <h6><i>2012-2013</i></h6>
+            <div class="col-md-1">
+              <button class="btn btn-secondary float-right" type="button" name="toggle-web" data-toggle="collapse" data-target="#mathworks" aria-expanded="false" aria-controls="mathworks">
+                <img class="w-100" src="/media/open-iconic/svg/chevron-top.svg" alt="Toggle collapse">
+              </button>
             </div>
-            <div class="col-md-2"></div>
+            <div class="col-md-1"></div>
           </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-6">
-              <ul>
-                <li>Investigated test failures.</li>
-                <li>Qualified new features.</li>
-                <li>Created and performed manual and automated testing.</li>
-                <li>Maintained / refactored existing tests.</li>
-                <li>Developed internal tools to increase team and company performance.</li>
-              </ul>
+          <div id="mathworks" class="collapse show">
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-6">
+                <h5>Customer&nbsp;Success&nbsp;Manager / Technical&nbsp;Evangelist</h5>
+              </div>
+              <div class="col-md-2">
+                <h6><i>2015-Present</i></h6>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-6">
+                <ul>
+                  <li>Work remotely.</li>
+                  <li>Develop and manage relationships with key educational accounts in a large geographic territory (the Midwest).</li>
+                  <li>Drive usage of MathWorks tools in Curriculum and Research.</li>
+                  <li>Be the Voice of the Customer internally.</li>
+                  <li>Develop internal tools to increase team and company performance.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-6">
+                <h5>Student&nbsp;Competitions Technical&nbsp;Evangelist (Edu&nbsp;Marketing)</h5>
+              </div>
+              <div class="col-md-2">
+                <h6><i>2013-2015</i></h6>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-6">
+                <ul>
+                  <li>Developed <a href="https://www.mathworks.com/hardware-support/frdm-kl25z.html">embedded hardware support package</a> for Simulink.</li>
+                  <li>Engaged with student developers participating in the <a href="https://community.nxp.com/docs/DOC-1284">Freescale Cup competition</a> (worldwide).</li>
+                  <li>Produced <a href="https://www.mathworks.com/academia/student-competitions/nxp.html">videos and examples</a> explaining the use of MathWorks tools.</li>
+                  <li>Developed internal tools to increase team and company performance.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-5">
+                <h5>Quality&nbsp;Engineer (Embedded&nbsp;Targets&nbsp;Team)</h5>
+              </div>
+              <div class="col"></div>
+              <div class="col-md-2">
+                <h6><i>2012-2013</i></h6>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-6">
+                <ul>
+                  <li>Investigated test failures.</li>
+                  <li>Qualified new features.</li>
+                  <li>Created and performed manual and automated testing.</li>
+                  <li>Maintained / refactored existing tests.</li>
+                  <li>Developed internal tools to increase team and company performance.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-5">
+                <h5>Application&nbsp;Support&nbsp;Engineer</h5>
+              </div>
+              <div class="col"></div>
+              <div class="col-md-2">
+                <h6><i>2012</i></h6>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-6">
+                <ul>
+                  <li>Resolved customer questions related to MATLAB.</li>
+                  <li>Investigated customer issues and provided their feedback to Development.</li>
+                  <li>Educated new hires about interfacing with customers.</li>
+                </ul>
+              </div>
             </div>
           </div>
 
+          <hr class="featurette-divider w-75">
           <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-5">
-              <h5>Application&nbsp;Support&nbsp;Engineer</h5>
+            <div class="col-md-6">
+              <h4>
+                RJ and K Electronics Inc., <span class="text-muted">Normal, IL</span>
+              </h4>
             </div>
             <div class="col"></div>
-            <div class="col-md-2">
-              <h6><i>2012</i></h6>
+            <div class="col-md-1">
+              <button class="btn btn-secondary float-right" type="button" name="toggle-web" data-toggle="collapse" data-target="#rjandk" aria-expanded="false" aria-controls="rjandk">
+                <img class="w-100" src="/media/open-iconic/svg/chevron-top.svg" alt="Toggle collapse">
+              </button>
             </div>
-            <div class="col-md-2"></div>
+            <div class="col-md-1"></div>
           </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-6">
-              <ul>
-                <li>Resolved customer questions related to MATLAB.</li>
-                <li>Investigated customer issues and provided their feedback to Development.</li>
-                <li>Educated new hires about interfacing with customers.</li>
-              </ul>
+          <div id="rjandk" class="collapse show">
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-6">
+                <h5>CFO / CDO</h5>
+              </div>
+              <div class="col-md-2">
+                <h6><i>2010-2013</i></h6>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-6">
+                <ul>
+                  <li>Co-Founded this educational robotics company.</li>
+                  <li>Designed autonomous robots for educational kits.</li>
+                  <li>Wrote algorithms for autonomous robotics.</li>
+                  <li>Developed sensor and control circuits for these robots.</li>
+                  <li>Maintained financial stability for the corporation.</li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
 
-        <hr class="featurette-divider w-75">
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-6">
-            <h4>
-              RJ and K Electronics Inc., <span class="text-muted">Normal, IL</span>
-            </h4>
-          </div>
-          <div class="col"></div>
-          <div class="col-md-1">
-            <button class="btn btn-secondary float-right" type="button" name="toggle-web" data-toggle="collapse" data-target="#rjandk" aria-expanded="false" aria-controls="rjandk">
-              <img class="w-100" src="/media/open-iconic/svg/chevron-top.svg" alt="Toggle collapse">
-            </button>
-          </div>
-          <div class="col-md-1"></div>
-        </div>
-        <div id="rjandk" class="collapse show">
+          <hr class="featurette-divider w-75">
           <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-6">
-              <h5>CFO / CDO</h5>
+              <h4>
+                ASU Mechanical Eng. Dept., <span class="text-muted">Tempe, AZ</span>
+              </h4>
             </div>
-            <div class="col-md-2">
-              <h6><i>2010-2013</i></h6>
+            <div class="col"></div>
+            <div class="col-md-1">
+              <button class="btn btn-secondary float-right" type="button" name="toggle-web" data-toggle="collapse" data-target="#asu" aria-expanded="false" aria-controls="asu">
+                <img class="w-100" src="/media/open-iconic/svg/chevron-bottom.svg" alt="Toggle collapse">
+              </button>
             </div>
-            <div class="col-md-2"></div>
+            <div class="col-md-1"></div>
           </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-6">
-              <ul>
-                <li>Co-Founded this educational robotics company.</li>
-                <li>Designed autonomous robots for educational kits.</li>
-                <li>Wrote algorithms for autonomous robotics.</li>
-                <li>Developed sensor and control circuits for these robots.</li>
-                <li>Maintained financial stability for the corporation.</li>
-              </ul>
+          <div id="asu" class="collapse">
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-6">
+                <h5>Research&nbsp;Assistant</h5>
+              </div>
+              <div class="col-md-2">
+                <h6><i>2011</i></h6>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-6">
+                <ul>
+                  <li>Solved Linux issues for <a href="https://uclabiomechatronics.wordpress.com/">the BioMechatronics Lab</a></li>
+                  <li>Integrated a <a href="http://www.barrett.com/products-arm.htm">7 degree of freedom Robotic Arm</a> with Linux.</li>
+                  <li>Created a software platform for controlling 36 motors in concert to drive a robotic hand.</li>
+                  <li>Programed a robot to safely respond to forceful interactions.</li>
+                  <li>Prepared and developed outreach demos.</li>
+                  <li>Set up Motion-Tracking and Eye-Tracking hardware</li>
+                  <li>Used recorded neurological data from a monkey to control a robotic hand.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-6">
+                <h5>Teaching&nbsp;Assistant</h5>
+              </div>
+              <div class="col-md-2">
+                <h6><i>2011</i></h6>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-6">
+                <ul>
+                  <li>Engaged with undergraduate students to hel them understand concepts regarding material properties.</li>
+                  <li>Presented information about experimental procedures.</li>
+                  <li>Graded student’s lab reports.</li>
+                  <li>Set up necessary hardware and software for each lab.</li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
 
-        <hr class="featurette-divider w-75">
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-6">
-            <h4>
-              ASU Mechanical Eng. Dept., <span class="text-muted">Tempe, AZ</span>
-            </h4>
-          </div>
-          <div class="col"></div>
-          <div class="col-md-1">
-            <button class="btn btn-secondary float-right" type="button" name="toggle-web" data-toggle="collapse" data-target="#asu" aria-expanded="false" aria-controls="asu">
-              <img class="w-100" src="/media/open-iconic/svg/chevron-bottom.svg" alt="Toggle collapse">
-            </button>
-          </div>
-          <div class="col-md-1"></div>
-        </div>
-        <div id="asu" class="collapse">
+          <hr class="featurette-divider w-75">
           <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-6">
-              <h5>Research&nbsp;Assistant</h5>
+              <h4>
+                Army Corps of Engineers, <span class="text-muted">Urbana, IL</span>
+              </h4>
             </div>
-            <div class="col-md-2">
-              <h6><i>2011</i></h6>
+            <div class="col"></div>
+            <div class="col-md-1">
+              <button class="btn btn-secondary float-right" type="button" name="toggle-web" data-toggle="collapse" data-target="#army-corps" aria-expanded="false" aria-controls="army-corps">
+                <img class="w-100" src="/media/open-iconic/svg/chevron-bottom.svg" alt="Toggle collapse">
+              </button>
             </div>
-            <div class="col-md-2"></div>
+            <div class="col-md-1"></div>
           </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-6">
-              <ul>
-                <li>Solved Linux issues for <a href="https://uclabiomechatronics.wordpress.com/">the BioMechatronics Lab</a></li>
-                <li>Integrated a <a href="http://www.barrett.com/products-arm.htm">7 degree of freedom Robotic Arm</a> with Linux.</li>
-                <li>Created a software platform for controlling 36 motors in concert to drive a robotic hand.</li>
-                <li>Programed a robot to safely respond to forceful interactions.</li>
-                <li>Prepared and developed outreach demos.</li>
-                <li>Set up Motion-Tracking and Eye-Tracking hardware</li>
-                <li>Used recorded neurological data from a monkey to control a robotic hand.</li>
-              </ul>
+          <div id="army-corps" class="collapse">
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-6">
+                <h5>Research&nbsp;Assistant</h5>
+              </div>
+              <div class="col-md-2">
+                <h6><i>2008-2010</i></h6>
+              </div>
+              <div class="col-md-2"></div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-6">
-              <h5>Teaching&nbsp;Assistant</h5>
-            </div>
-            <div class="col-md-2">
-              <h6><i>2011</i></h6>
-            </div>
-            <div class="col-md-2"></div>
-          </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-6">
-              <ul>
-                <li>Engaged with undergraduate students to hel them understand concepts regarding material properties.</li>
-                <li>Presented information about experimental procedures.</li>
-                <li>Graded student’s lab reports.</li>
-                <li>Set up necessary hardware and software for each lab.</li>
-              </ul>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-6">
+                <ul>
+                  <li>Machined parts for the experiment setup.</li>
+                  <li>Programmed Virtual Instruments in <a href="http://www.ni.com/en-us/shop/labview.html">LabView</a> to streamline data collection.</li>
+                  <li>Analyzed atomic composition of samples via <a href="https://en.wikipedia.org/wiki/Scanning_electron_microscope">SEM</a>/<a href="http://www.edax.com/">EDAX</a>.</li>
+                  <li>Built circuits to test the electrical properties of materials.</li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
 
-        <hr class="featurette-divider w-75">
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-6">
-            <h4>
-              Army Corps of Engineers, <span class="text-muted">Urbana, IL</span>
-            </h4>
-          </div>
-          <div class="col"></div>
-          <div class="col-md-1">
-            <button class="btn btn-secondary float-right" type="button" name="toggle-web" data-toggle="collapse" data-target="#army-corps" aria-expanded="false" aria-controls="army-corps">
-              <img class="w-100" src="/media/open-iconic/svg/chevron-bottom.svg" alt="Toggle collapse">
-            </button>
-          </div>
-          <div class="col-md-1"></div>
-        </div>
-        <div id="army-corps" class="collapse">
+          <hr class="featurette-divider w-75">
           <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-6">
-              <h5>Research&nbsp;Assistant</h5>
+              <h4>
+                ISU Physics Department, <span class="text-muted">Normal, IL</span>
+              </h4>
             </div>
-            <div class="col-md-2">
-              <h6><i>2008-2010</i></h6>
+            <div class="col"></div>
+            <div class="col-md-1">
+              <button class="btn btn-secondary float-right" type="button" name="toggle-web" data-toggle="collapse" data-target="#isu" aria-expanded="false" aria-controls="isu">
+                <img class="w-100" src="/media/open-iconic/svg/chevron-bottom.svg" alt="Toggle collapse">
+              </button>
             </div>
-            <div class="col-md-2"></div>
+            <div class="col-md-1"></div>
           </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-6">
-              <ul>
-                <li>Machined parts for the experiment setup.</li>
-                <li>Programmed Virtual Instruments in <a href="http://www.ni.com/en-us/shop/labview.html">LabView</a> to streamline data collection.</li>
-                <li>Analyzed atomic composition of samples via <a href="https://en.wikipedia.org/wiki/Scanning_electron_microscope">SEM</a>/<a href="http://www.edax.com/">EDAX</a>.</li>
-                <li>Built circuits to test the electrical properties of materials.</li>
-              </ul>
+          <div id="isu" class="collapse">
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-6">
+                <h5>Research&nbsp;Assistant</h5>
+              </div>
+              <div class="col-md-2">
+                <h6><i>2006-2009</i></h6>
+              </div>
+              <div class="col-md-2"></div>
             </div>
-          </div>
-        </div>
-
-        <hr class="featurette-divider w-75">
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-6">
-            <h4>
-              ISU Physics Department, <span class="text-muted">Normal, IL</span>
-            </h4>
-          </div>
-          <div class="col"></div>
-          <div class="col-md-1">
-            <button class="btn btn-secondary float-right" type="button" name="toggle-web" data-toggle="collapse" data-target="#isu" aria-expanded="false" aria-controls="isu">
-              <img class="w-100" src="/media/open-iconic/svg/chevron-bottom.svg" alt="Toggle collapse">
-            </button>
-          </div>
-          <div class="col-md-1"></div>
-        </div>
-        <div id="isu" class="collapse">
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-6">
-              <h5>Research&nbsp;Assistant</h5>
-            </div>
-            <div class="col-md-2">
-              <h6><i>2006-2009</i></h6>
-            </div>
-            <div class="col-md-2"></div>
-          </div>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-6">
-              <ul>
-                <li>Managed <a href="http://www.physics.illinoisstate.edu/research/solid_state/index.shtml">the lab</a></li>
-                <li>Maintained a vacuum system (equiped for <a href="https://en.wikipedia.org/wiki/Electron-beam_physical_vapor_deposition">Electron Beam Vapor Deposition</a> of metals).</li>
-                <li>Contacted manufacturers, technicians, and distributors to repair and replace parts of the system.</li>
-                <li>Recorded and analyzed data to calibrate system to generate desired outputs.</li>
-              </ul>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-6">
+                <ul>
+                  <li>Managed <a href="http://www.physics.illinoisstate.edu/research/solid_state/index.shtml">the lab</a></li>
+                  <li>Maintained a vacuum system (equiped for <a href="https://en.wikipedia.org/wiki/Electron-beam_physical_vapor_deposition">Electron Beam Vapor Deposition</a> of metals).</li>
+                  <li>Contacted manufacturers, technicians, and distributors to repair and replace parts of the system.</li>
+                  <li>Recorded and analyzed data to calibrate system to generate desired outputs.</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-  </main>
+    </main>
     <hr class="featurette-divider">
     <section id="footer">
     </section>
