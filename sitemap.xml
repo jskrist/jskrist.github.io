@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://jskrist.github.io/index.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+    <image:image>
+       <image:loc>https://jskrist.github.io/media/images/nxpCupCar.png</image:loc>
+       <image:caption>NXP Cup Model Vehicle</image:caption>
+    </image:image>
+    <video:video>
+      <video:content_loc>
+        https://jskrist.github.io/media/video/simulationVideo.mp4
+      </video:content_loc>
+      <video:thumbnail_loc>
+        https://jskrist.github.io/media/images/simulatedTrack.png
+      </video:thumbnail_loc>
+      <video:title>Autonomous Vehicle Simulation</video:title>
+      <video:description>
+        Simulate the behavior of your control logic for this autounomous car.
+      </video:description>
+      <video:duration>25</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+    <video:video>
+      <video:content_loc>
+        https://jskrist.github.io/media/video/simplePendulum.mp4
+      </video:content_loc>
+      <video:thumbnail_loc>
+        https://jskrist.github.io/media/images/simplePendulum.png
+      </video:thumbnail_loc>
+      <video:title>Simulation of a Simple Pendulum</video:title>
+      <video:description>
+        Here is a visualization of a simple pendulum, that was created automatically for the user.
+      </video:description>
+      <video:duration>2</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+    <image:image>
+       <image:loc>https://jskrist.github.io/media/images/GitHub-Mark_small.svg</image:loc>
+       <image:caption>GitHub Logo</image:caption>
+    </image:image>
+    <image:image>
+       <image:loc>https://jskrist.github.io/media/images/Twitter_Social_Icon_Circle_Color.svg</image:loc>
+       <image:caption>Twitter Logo</image:caption>
+    </image:image>
+    <image:image>
+       <image:loc>https://jskrist.github.io/media/images/L-Membrane.png</image:loc>
+       <image:caption>MATLAB Logo</image:caption>
+    </image:image>
+    <image:image>
+    <image:loc>https://jskrist.github.io/media/images/In-2C-34px-R.png</image:loc>
+       <image:caption>LinkedIn Logo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://jskrist.github.io/aboutMe.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <image:image>
+       <image:loc>https://jskrist.github.io/media/images/GitHub-Mark_small.svg</image:loc>
+       <image:caption>GitHub Logo</image:caption>
+    </image:image>
+    <image:image>
+       <image:loc>https://jskrist.github.io/media/images/Twitter_Social_Icon_Circle_Color.svg</image:loc>
+       <image:caption>Twitter Logo</image:caption>
+    </image:image>
+    <image:image>
+       <image:loc>https://jskrist.github.io/media/images/L-Membrane.png</image:loc>
+       <image:caption>MATLAB Logo</image:caption>
+    </image:image>
+    <image:image>
+    <image:loc>https://jskrist.github.io/media/images/In-2C-34px-R.png</image:loc>
+       <image:caption>LinkedIn Logo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://jskrist.github.io/resume.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+       <image:loc>https://jskrist.github.io/media/images/WAM.png</image:loc>
+       <image:caption>7 DOF Robotic Arm</image:caption>
+    </image:image>
+    <image:image>
+       <image:loc>https://jskrist.github.io/media/images/solarCar.png</image:loc>
+       <image:caption>Solar Car</image:caption>
+    </image:image>
+    <image:image>
+       <image:loc>https://jskrist.github.io/media/images/mcsb.gif</image:loc>
+       <image:caption>Circuit board animation</image:caption>
+    </image:image>
+
+    <image:image>
+       <image:loc>https://jskrist.github.io/media/images/GitHub-Mark_small.svg</image:loc>
+       <image:caption>GitHub Logo</image:caption>
+    </image:image>
+    <image:image>
+       <image:loc>https://jskrist.github.io/media/images/Twitter_Social_Icon_Circle_Color.svg</image:loc>
+       <image:caption>Twitter Logo</image:caption>
+    </image:image>
+    <image:image>
+       <image:loc>https://jskrist.github.io/media/images/L-Membrane.png</image:loc>
+       <image:caption>MATLAB Logo</image:caption>
+    </image:image>
+    <image:image>
+    <image:loc>https://jskrist.github.io/media/images/In-2C-34px-R.png</image:loc>
+       <image:caption>LinkedIn Logo</image:caption>
+    </image:image>
+  </url>
+</urlset>
