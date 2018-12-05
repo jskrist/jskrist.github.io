@@ -1,6 +1,6 @@
 function initMap() {
     var mapCanvas = document.getElementById("map");
-    var latLon = new google.maps.LatLng(38.802379, -89.966680);
+    var latLon = new google.maps.LatLng(42.5998, -71.3673);
     var mapOptions = {
         center: latLon,
         zoom: 10
@@ -10,7 +10,7 @@ function initMap() {
     var marker = new google.maps.Marker({
               position: latLon,
               map: map,
-              title: 'Edwardsville, IL'
+              title: 'Chelmsford, MA'
             });
 
 }
