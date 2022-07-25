@@ -3,23 +3,30 @@ let tileImages = [];
 let fileList = [];
 let grid = [];
 let seed = 8;
+let sel;
 
 const DEBUG = false;
-const DIM_X = 10;
-const DIM_Y = 10;
+const DIM_X = 30;
+const DIM_Y = 20;
 let w;
 let h;
 
 function setup() {
   noLoop();
-  const canvas = createCanvas(500, 500);
-  canvas.parent('canvas');
+  const canvas = createCanvas(600, 400);
+  canvas.parent("canvas");
   w = width / DIM_X;
   h = height / DIM_Y;
   startOver();
   drawBackground();
-  const inputElement = document.getElementById("tileImages");
-  inputElement.addEventListener("change", loadSelectedImages, false);
+  let sel_options = select("#options");
+  sel = createSelect(sel_options);
+  sel.option('circuit-coding-train');
+  sel.option('polka');
+  sel.option('rail');
+  sel.changed(loadSelectedImages);
+  loadSelectedImages();
+
   textAlign(LEFT, TOP);
   textSize(8);
 }
@@ -28,16 +35,32 @@ function loadSelectedImages() {
   noLoop();
   tiles = [];
   tileImages = [];
-  fileList = this.files;
+  fileList = [];
+  switch(sel.value()) {
+    case 'circuit-coding-train':
+      for(let i = 0; i < 13; i++) {
+        fileList.push(i + '.png');
+      }
+      break;
+    case 'polka':
+      fileList = ['blank.png', 'down.png'];
+      break;
+    case 'rail':
+      for(let i = 0; i < 7; i++) {
+        fileList.push('tile' + i + '.png');
+      }
+      break;
+  }
+  
   for (let i = 0; i < fileList.length; i++) {
-    imagePath = './tiles/' + fileList[i].webkitRelativePath;
+    imagePath = "../media/images/tiles_404/" + sel.value() + '/' + fileList[i];
     loadImage(imagePath, addToTileImages);
   }
 }
 
 function addToTileImages(im) {
   tileImages.push(im);
-  if(tileImages.length == fileList.length) {
+  if (tileImages.length == fileList.length) {
     asyncSetup();
   }
 }
@@ -49,18 +72,18 @@ function asyncSetup() {
     edges = new ImEdges();
     // Top edge of image
     edgeIm = im.get(0, 0, im.width, 1);
-    edges.add_edge('Top', edgeIm);
+    edges.add_edge("Top", edgeIm);
     // Right edge of image
-    edgeIm = im.get(im.width-1, 0, 1, im.height);
-    edges.add_edge('Right', edgeIm);
+    edgeIm = im.get(im.width - 1, 0, 1, im.height);
+    edges.add_edge("Right", edgeIm);
     // Bottom edge of image
-    edgeIm = im.get(0, im.height-1, im.width, 1);
-    edges.add_edge('Bottom', edgeIm);
-    edges.Bottom.reverse()
+    edgeIm = im.get(0, im.height - 1, im.width, 1);
+    edges.add_edge("Bottom", edgeIm);
+    edges.Bottom.reverse();
     // Left edge of image
     edgeIm = im.get(0, 0, 1, im.height);
-    edges.add_edge('Left', edgeIm);
-    edges.Left.reverse()
+    edges.add_edge("Left", edgeIm);
+    edges.Left.reverse();
     tiles.push(new Tile(im, edges));
   }
 
@@ -83,20 +106,20 @@ function asyncSetup() {
   }
 
   startOver();
-  if(!DEBUG) loop();
+  if (!DEBUG) loop();
 }
 
 function removeDuplicatedTiles(tiles) {
   const uniqueTilesMap = {};
   for (const tile of tiles) {
-    const key = tile.edges.join(','); // ex: "ABB,BCB,BBA,AAA"
+    const key = tile.edges.join(","); // ex: "ABB,BCB,BBA,AAA"
     uniqueTilesMap[key] = tile;
   }
   return Object.values(uniqueTilesMap);
 }
 
 function startOver() {
-  if(DEBUG) randomSeed(seed);
+  if (DEBUG) randomSeed(seed);
   grid = [];
   // Create cell for each spot on the grid
   for (let i = 0; i < DIM_X * DIM_Y; i++) {
@@ -106,11 +129,11 @@ function startOver() {
 }
 
 function draw() {
-  if(tiles.length < 1) {
+  if (tiles.length < 1) {
     return;
   }
   drawBackground();
-  if(DEBUG) drawNumOptions();
+  if (DEBUG) drawNumOptions();
 
   // Pick cell with least entropy
   // first get a list of only the un-collapsed cells
@@ -118,7 +141,7 @@ function draw() {
   gridCopy = gridCopy.filter((a) => !a.collapsed);
   // if there aren't any, then the image is complete, so we can stop now
   if (gridCopy.length == 0) {
-    console.log('Image Complete');
+    console.log("Image Complete");
     noLoop();
     return;
   }
@@ -140,12 +163,12 @@ function draw() {
   // cut off all the cells that have more options than the first cell
   if (stopIndex > 0) gridCopy.splice(stopIndex);
 
-    // select a random cell to collapse
-    const cell = random(gridCopy);
-    // collapse it by picking a random option from its remaining options
-    cell.collapsed = true;
-    const pick = random(cell.options);
-    cell.options = [pick];
+  // select a random cell to collapse
+  const cell = random(gridCopy);
+  // collapse it by picking a random option from its remaining options
+  cell.collapsed = true;
+  const pick = random(cell.options);
+  cell.options = [pick];
 
   // update cell valid options
   updateValidNeighbors();
@@ -171,18 +194,24 @@ function drawBackground() {
 
 function drawNumOptions() {
   fill(255);
-  for(let y = 0; y < DIM_Y; y++) {
-    for(let x = 0; x < DIM_X; x++) {
-      text(grid[x + y * DIM_X].options.length, x*w, y*h);
+  for (let y = 0; y < DIM_Y; y++) {
+    for (let x = 0; x < DIM_X; x++) {
+      text(grid[x + y * DIM_X].options.length, x * w, y * h);
     }
   }
 }
 
-function combineOptions(optionsToCheck, directionToCheck, validOptions = new Set()) {
+function combineOptions(
+  optionsToCheck,
+  directionToCheck,
+  validOptions = new Set()
+) {
   let tmpValidOptions = new Set();
   for (let option of optionsToCheck) {
     let valid = tiles[option][directionToCheck];
-    valid.forEach(x => {tmpValidOptions.add(x)})
+    valid.forEach((x) => {
+      tmpValidOptions.add(x);
+    });
   }
   return intersection(validOptions, tmpValidOptions);
 }
@@ -205,30 +234,34 @@ function updateValidNeighbors(tryToReset = true) {
       let cell = grid[index];
       if (!cell.collapsed) {
         // start out assuming all options are valid
-        let validOptions = new Set(Array(tiles.length).fill(0).map((x,i) => i));
+        let validOptions = new Set(
+          Array(tiles.length)
+            .fill(0)
+            .map((x, i) => i)
+        );
         // Look up
         if (y > 0) {
           let up = grid[xy2ind(x, y - 1)];
-          validOptions = combineOptions(up.options, 'down', validOptions);
+          validOptions = combineOptions(up.options, "down", validOptions);
         }
         // Look right
         if (x < DIM_X - 1) {
           let right = grid[xy2ind(x + 1, y)];
-          validOptions = combineOptions(right.options, 'left', validOptions);
+          validOptions = combineOptions(right.options, "left", validOptions);
         }
         // Look down
         if (y < DIM_Y - 1) {
           let down = grid[xy2ind(x, y + 1)];
-          validOptions = combineOptions(down.options, 'up', validOptions);
+          validOptions = combineOptions(down.options, "up", validOptions);
         }
         // Look left
         if (x > 0) {
           let left = grid[xy2ind(x - 1, y)];
-          validOptions = combineOptions(left.options, 'right', validOptions);
+          validOptions = combineOptions(left.options, "right", validOptions);
         }
         // if there are no valid options, then we need to deal with that
-        if(validOptions.size == 0) {
-          if(DEBUG) console.log('no valid options [' + x + ', ' + y + ']');
+        if (validOptions.size == 0) {
+          if (DEBUG) console.log("no valid options [" + x + ", " + y + "]");
           // start over
           startOver();
           return;
@@ -240,7 +273,7 @@ function updateValidNeighbors(tryToReset = true) {
   }
   for (updateData of toUpdate) {
     // delete old cell and replace it with a new one
-    delete grid[updateData[0]]
+    delete grid[updateData[0]];
     grid[updateData[0]] = new Cell(Array.from(updateData[1]));
   }
 }
@@ -248,18 +281,18 @@ function updateValidNeighbors(tryToReset = true) {
 function getIndicesFromCell(cell) {
   let x = undefined;
   let y = undefined;
-  for(let ind = 0; ind < grid.length; ind++) {
-    if(grid[ind] == cell) {
+  for (let ind = 0; ind < grid.length; ind++) {
+    if (grid[ind] == cell) {
       x = ind % DIM_X;
       y = Math.floor(ind / DIM_X);
       break;
     }
   }
-  return {x, y};
+  return { x, y };
 }
 
-function xy2ind(x,y) {
-  return x + (y * DIM_X);
+function xy2ind(x, y) {
+  return x + y * DIM_X;
 }
 
 function resetCellAndNeighbors(cell) {
@@ -269,13 +302,15 @@ function resetCellAndNeighbors(cell) {
   let x = inds.x;
   let y = inds.y;
 
-  allOptions = Array(tiles.length).fill(0).map((x,i) => i);
+  allOptions = Array(tiles.length)
+    .fill(0)
+    .map((x, i) => i);
   // un-collapse cell;
   cell.collapsed = false;
   cell.options = allOptions.slice();
   // un-collapse neighbors
   // Up Neighbor
-  if(y > 0) {
+  if (y > 0) {
     let up = grid[xy2ind(x, y - 1)];
     up.collapsed = false;
     up.options = allOptions.slice();
@@ -322,25 +357,25 @@ function resetCellAndNeighbors(cell) {
   let dw = DIM_X - x;
   let dh = DIM_Y - y;
   // clear path to the left edge of the grid
-  for(let i = 2; i < x; i++) {
+  for (let i = 2; i < x; i++) {
     let tmp_cell = grid[xy2ind(x - i, y)];
     tmp_cell.collapsed = false;
     tmp_cell.options = allOptions.slice();
   }
   // clear path to the top edge of the grid
-  for(let j = 2; j < y; j++) {
+  for (let j = 2; j < y; j++) {
     let tmp_cell = grid[xy2ind(x, y - j)];
     tmp_cell.collapsed = false;
     tmp_cell.options = allOptions.slice();
   }
   // clear path to the right edge of the grid
-  for(let i = 2; i < dw; i++) {
+  for (let i = 2; i < dw; i++) {
     let tmp_cell = grid[xy2ind(x + i, y)];
     tmp_cell.collapsed = false;
     tmp_cell.options = allOptions.slice();
   }
   // clear path to the bottom edge of the grid
-  for(let j = 2; j < dh; j++) {
+  for (let j = 2; j < dh; j++) {
     let tmp_cell = grid[xy2ind(x, y + j)];
     tmp_cell.collapsed = false;
     tmp_cell.options = allOptions.slice();
@@ -350,35 +385,53 @@ function resetCellAndNeighbors(cell) {
 function showNeighbors(tile) {
   drawBackground();
   thisTile = tiles[tile];
-  // show this tile in the center 
-  let centerX = floor(DIM_X/2);
-  let centerY = floor(DIM_Y/2);
+  // show this tile in the center
+  let centerX = floor(DIM_X / 2);
+  let centerY = floor(DIM_Y / 2);
 
-  image(thisTile.img, centerX*w, centerY*h, w, h)
+  image(thisTile.img, centerX * w, centerY * h, w, h);
   // top neighbors
-  for(let i = 0; i < thisTile.up.length; i++) {
-    image(tiles[thisTile.up[i]].img, centerX*w, (centerY - 1 - i) * h, w, h)
+  for (let i = 0; i < thisTile.up.length; i++) {
+    image(tiles[thisTile.up[i]].img, centerX * w, (centerY - 1 - i) * h, w, h);
   }
   // right neighbors
-  for(let i = 0; i < thisTile.right.length; i++) {
-    image(tiles[thisTile.right[i]].img, (centerX + 1 + i)*w, centerY * h, w, h)
+  for (let i = 0; i < thisTile.right.length; i++) {
+    image(
+      tiles[thisTile.right[i]].img,
+      (centerX + 1 + i) * w,
+      centerY * h,
+      w,
+      h
+    );
   }
   // bottom neighbors
-  for(let i = 0; i < thisTile.down.length; i++) {
-    image(tiles[thisTile.down[i]].img, centerX*w, (centerY + 1 + i) * h, w, h)
+  for (let i = 0; i < thisTile.down.length; i++) {
+    image(
+      tiles[thisTile.down[i]].img,
+      centerX * w,
+      (centerY + 1 + i) * h,
+      w,
+      h
+    );
   }
   // left neighbors
-  for(let i = 0; i < thisTile.left.length; i++) {
-    image(tiles[thisTile.left[i]].img, (centerX - 1 - i)*w, centerY * h, w, h)
+  for (let i = 0; i < thisTile.left.length; i++) {
+    image(
+      tiles[thisTile.left[i]].img,
+      (centerX - 1 - i) * w,
+      centerY * h,
+      w,
+      h
+    );
   }
 }
 
 function showAllTiles() {
-  for(let i = 0; i < tiles.length; i++) {
-    image(tiles[i].img, (i % DIM_X) * w, (i >= DIM_X) * h, w, h)
+  for (let i = 0; i < tiles.length; i++) {
+    image(tiles[i].img, (i % DIM_X) * w, (i >= DIM_X) * h, w, h);
   }
 }
 
 function mousePressed() {
-  if(DEBUG) redraw();
+  if (DEBUG) redraw();
 }
