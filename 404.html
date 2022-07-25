@@ -7,21 +7,25 @@ permalink: /404.html
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Page Not Found</title>
-    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat|Spectral+SC" rel="stylesheet"> -->
     <link rel="stylesheet" href="/css/404.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js"></script>
-    <script src="/scripts/game0-404.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
 </head>
 <body>
       <header id="about">
-        <p>I can't find that page, but I did find you a game to play.</p>
+        <p>I can't find that page, but I can make a pretty picture for you.</p>
       </header>
       <main>
-        <div id="play-btn">
-          <a href="#">Start Game</a>
+        <div id="main-content">
+          <div id="ui-bar">
+            <select id="options"></select><button onclick="startOver();loop();">Retry</button>
+          </div>
+          <div id="canvas"></div>
         </div>
-        <div id="defaultCanvas"></div>
       </main>
+      <script src="/scripts/imEdges.js"></script>
+      <script src="/scripts/tile.js"></script>
+      <script src="/scripts/cell.js"></script>
+      <script src="/scripts/sketch-404.js"></script>
       <footer>
       </footer>
 </body>
