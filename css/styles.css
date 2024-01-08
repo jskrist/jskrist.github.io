@@ -13,3 +13,16 @@
   width: 150px;
   margin-left: 1ch;
 }
+
+.rectangle-cover {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    position: absolute;
+    top: 2px;
+    left: 575px;
+    }
+
+.code_example {
+    position:  relative;
+}
