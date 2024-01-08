@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="../scripts/jlrTripPlanner.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/jlr.css">
+    <title>Trip Planner</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-dark fixed-top bg-dark">
+          <h1 class="navbar-brand">Jaguar I-Pace Trip Planner</h1>
+      </nav>
+    </header>
+    <main role="main">
+      <div class="container marketing">
+        <div class="row">
+          <div class="col-sm-12">
+            <p>Hello Hackers and Mobile Scrollers ^_^</p>
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row">
+          <div class="col-sm-10">
+            <div class="row">
+              <div class="col-sm-3">
+                <table id="battery-odom-info" class="table table-bordered table-responsive-sm table-striped text-center">
+                  <thead>
+                    <tr>
+                    <th>Jaguar I-Pace</th>
+                    <th>Battery %</th>
+                    <th>Odometer</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Leg Start</td>
+                      <td id="start-batt">100</td>
+                      <td id="start-odom">17144</td>
+                    </tr>
+                    <tr>
+                      <td>Current</td>
+                      <td id="curr-batt">80</td>
+                      <td id="curr-odom">17185</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-md-1">
+                <p></p>
+              </div>
+              <div class="col-sm-2">
+                <table id="battery-range-info" class="table table-bordered table-responsive-sm table-striped text-center">
+                  <tbody>
+                    <tr>
+                      <td>Bat KwH</td>
+                      <td id="batt-kwh">87</td>
+                    </tr>
+                    <tr>
+                      <td>Range/%</td>
+                      <td id="range-per-percent">2.0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-sm-6">
+                <p></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-10">
+                <table style="margin-bottom: 0px;" id="leg-info" class="table table-bordered table-responsive-sm table-striped text-center">
+                  <thead>
+                    <tr>
+                    <th>Leg</th>
+                    <th>Distance</th>
+                    <th>% Used</th>
+                    <th>Exp Arriv %</th>
+                    <th>Chg'd To %</th>
+                    <th>Chg KW</th>
+                    <th>Est Chg Time</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td contenteditable="true">Sagewood</td>
+                      <td contenteditable="true" class="leg-dist" oninput="updatePrediction()">24</td>
+                      <td contenteditable="false" class="pct-used">12</td>
+                      <td contenteditable="false" class="arriv-pct">68</td>
+                      <td contenteditable="true" class="chg-to">70</td>
+                      <td contenteditable="true" class="">7</td>
+                      <td contenteditable="false" class="chg-time">1:20:00</td>
+                    </tr>
+                    <tr id='blank-row' hidden>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true" class="leg-dist"></td>
+                      <td contenteditable="false" class="pct-used"></td>
+                      <td contenteditable="false" class="arriv-pct"></td>
+                      <td contenteditable="true" class="chg-to"></td>
+                      <td contenteditable="true" class=""></td>
+                      <td contenteditable="false" class="chg-time"></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button onclick="addLeg()"><img class="section-icon" src="../media/open-iconic/svg/plus.svg" alt="Add Leg"></button>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="row">
+              <button type="button">Update Current Mileage</button>
+            </div>
+            <div class="row">
+              <button type="button">Start Trip</button>
+            </div>
+            <div class="row">
+              <button type="button">Complete Leg</button>
+            </div>
+            <div class="row">
+              <button type="button">I Just Charged</button>
+            </div>
+            <div class="row">
+              <p></p>
+            </div>
+            <div class="row">
+              <button type="button">Clear Trip</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- FOOTER -->
+      <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <div>
+          <a href="https://github.com/jskrist"><img src="../media/images/GitHub-Mark_small.svg" alt="GitHub" height="32px"></a>
+          <a href="https://twitter.com/jskrist"><img src="../media/images/Twitter_Social_Icon_Circle_Color.svg" alt="twitter" height="32px"></a>
+          <a href="https://www.mathworks.com/matlabcentral/profile/authors/3290269-james-kristoff"><img src="../media/images/L-Membrane.png" alt="MATLAB Community" height="32px"></a>
+          <a href="https://www.linkedin.com/in/james-kristoff/"><img src="../media/images/In-2C-34px-R.png" alt="LinkedIn" height="32px"></a>
+        </div>
+        <p>© 2017-2020 James Kristoff</p>
+      </footer>
+    </main>
+    <section id="scripts">
+      <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script> -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </section>
+  </body>
+</html>
